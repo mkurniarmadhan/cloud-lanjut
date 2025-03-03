@@ -10,14 +10,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 wss.on('connection', (ws) => {
     console.log('User terhubung');
-    ws.send('Welcome to WebSocket server!');
+    ws.send('Selamat datang');
 
     ws.on('message', (message) => {
         console.log(`Received: ${message}`);
         ws.send(`Server: ${message}`);
     });
 
-    ws.on('close', () => console.log('User terhubung'));
+    ws.on('close', () => console.log('User Terputus'));
 });
 
 server.listen(3000, () => {
